@@ -19,6 +19,9 @@ _extra challenges_
 
 [Starting Patch](shadow_walls/shadow_mask_start.maxpat)
 
+__Please make your own folder inside of Assignments/shadow_walls/  and save your patches there.__
+
+
 ### Reference photo:
 
 ![7_image_preview.jpg](shadow_walls/7_image_preview.jpg)
