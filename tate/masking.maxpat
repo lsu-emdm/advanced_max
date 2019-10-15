@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 79.0, 1025.0, 687.0 ],
+		"rect" : [ 34.0, 79.0, 1212.0, 687.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,18 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-35",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "jit_matrix", "" ],
+					"patching_rect" : [ 926.0, 273.0, 106.0, 20.0 ],
+					"text" : "cv.jit.blobs.bounds"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-63",
 					"maxclass" : "jit.pwindow",
@@ -429,34 +441,34 @@
 									"outputmode" : [ 1 ],
 									"out_name" : [ "u782001917" ],
 									"dim" : [ 1, 1 ],
-									"texture_name" : [ "u212001915" ],
-									"interp" : [ 0 ],
-									"position" : [ 0.0 ],
-									"adapt" : [ 1 ],
-									"framereport" : [ 0 ],
-									"dstrect" : [ 0, 0, 1, 1 ],
-									"looppoints_ms" : [ 0, 0 ],
-									"engine" : [ "avf" ],
-									"automatic" : [ 0 ],
 									"usedstrect" : [ 0 ],
-									"time_ms" : [ 0 ],
-									"loopreport" : [ 0 ],
-									"vol" : [ 1.0 ],
-									"looppoints" : [ 0, 0 ],
-									"loopstart" : [ 0 ],
-									"colormode" : [ "argb" ],
-									"autostart" : [ 1 ],
-									"moviefile" : [ "" ],
-									"output_texture" : [ 0 ],
-									"time" : [ 0 ],
-									"srcrect" : [ 0, 0, 1, 1 ],
+									"interp" : [ 0 ],
+									"framereport" : [ 0 ],
+									"rate" : [ 1.0 ],
+									"automatic" : [ 0 ],
 									"looppoints_secs" : [ 0.0, 0.0 ],
 									"drawto" : [ "" ],
-									"usesrcrect" : [ 0 ],
-									"time_secs" : [ 0.0 ],
-									"loopend" : [ 0 ],
 									"unique" : [ 0 ],
-									"rate" : [ 1.0 ]
+									"colormode" : [ "argb" ],
+									"time_ms" : [ 0 ],
+									"dstrect" : [ 0, 0, 1, 1 ],
+									"usesrcrect" : [ 0 ],
+									"autostart" : [ 1 ],
+									"moviefile" : [ "" ],
+									"position" : [ 0.0 ],
+									"loopreport" : [ 0 ],
+									"looppoints_ms" : [ 0, 0 ],
+									"time_secs" : [ 0.0 ],
+									"vol" : [ 1.0 ],
+									"output_texture" : [ 0 ],
+									"adapt" : [ 1 ],
+									"looppoints" : [ 0, 0 ],
+									"engine" : [ "avf" ],
+									"texture_name" : [ "u212001915" ],
+									"loopend" : [ 0 ],
+									"srcrect" : [ 0, 0, 1, 1 ],
+									"loopstart" : [ 0 ],
+									"time" : [ 0 ]
 								}
 
 							}
@@ -1245,6 +1257,10 @@
 				"name" : "cv.jit.dilate.mxo",
 				"type" : "iLaX"
 			}
+, 			{
+				"name" : "cv.jit.blobs.bounds.mxo",
+				"type" : "iLaX"
+			}
  ],
 		"autosave" : 0,
 		"styles" : [ 			{
@@ -1268,8 +1284,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
