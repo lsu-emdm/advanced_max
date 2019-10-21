@@ -1164,7 +1164,7 @@
 		"dependency_cache" : [ 			{
 				"name" : "tag.debug.maxpat",
 				"bootpath" : "~/Documents/LSU/2019_Fall/Max/advanced_max/7745_in_class",
-				"patcherrelativepath" : ".",
+				"patcherrelativepath" : "../7745_in_class",
 				"type" : "JSON",
 				"implicit" : 1
 			}
