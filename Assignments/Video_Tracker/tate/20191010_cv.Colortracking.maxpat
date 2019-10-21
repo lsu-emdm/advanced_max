@@ -39,6 +39,107 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"data" : 					{
+						"clips" : [ 							{
+								"absolutepath" : "Macintosh HD:/Users/tatecarson/Documents/LSU/2019_Fall/Max/advanced_max/Assignments/Video_Tracker/videos/1.mov",
+								"filename" : "1.mov",
+								"filekind" : "moviefile",
+								"loop" : 1,
+								"content_state" : 								{
+									"outputmode" : [ 1 ],
+									"out_name" : [ "u507000541" ],
+									"dim" : [ 1, 1 ],
+									"time_ms" : [ 0 ],
+									"engine" : [ "avf" ],
+									"time" : [ 0 ],
+									"time_secs" : [ 0.0 ],
+									"usedstrect" : [ 0 ],
+									"loopreport" : [ 0 ],
+									"rate" : [ 1.0 ],
+									"unique" : [ 0 ],
+									"output_texture" : [ 0 ],
+									"loopstart" : [ 0 ],
+									"colormode" : [ "argb" ],
+									"interp" : [ 0 ],
+									"looppoints" : [ 0, 0 ],
+									"position" : [ 0.0 ],
+									"looppoints_ms" : [ 0, 0 ],
+									"autostart" : [ 1 ],
+									"dstrect" : [ 0, 0, 1, 1 ],
+									"srcrect" : [ 0, 0, 1, 1 ],
+									"vol" : [ 1.0 ],
+									"looppoints_secs" : [ 0.0, 0.0 ],
+									"automatic" : [ 0 ],
+									"drawto" : [ "" ],
+									"texture_name" : [ "u147000539" ],
+									"loopend" : [ 0 ],
+									"adapt" : [ 1 ],
+									"moviefile" : [ "" ],
+									"framereport" : [ 0 ],
+									"usesrcrect" : [ 0 ]
+								}
+
+							}
+ ]
+					}
+,
+					"id" : "obj-40",
+					"maxclass" : "jit.playlist",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "jit_matrix", "", "dictionary" ],
+					"patching_rect" : [ 321.0, 129.0, 150.0, 30.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-38",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 563.5, 473.0, 150.0, 30.0 ],
+					"text" : "i am confused about what this data is"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-36",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "jit_matrix", "" ],
+					"patching_rect" : [ 602.0, 330.5, 106.0, 20.0 ],
+					"text" : "cv.jit.blobs.bounds"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-33",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 735.0, 637.0, 47.0, 20.0 ],
+					"text" : "s blob4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-32",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 670.166690009254467, 637.0, 47.0, 20.0 ],
+					"text" : "s blob3"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-30",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -211,7 +312,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 614.166690009254467, 580.0, 50.0, 20.0 ]
+					"patching_rect" : [ 586.833346009254569, 580.0, 50.0, 20.0 ]
 				}
 
 			}
@@ -224,7 +325,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 556.833346009254456, 580.0, 50.0, 20.0 ]
+					"patching_rect" : [ 513.833346009254456, 585.0, 50.0, 20.0 ]
 				}
 
 			}
@@ -275,7 +376,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 788.333346009254456, 330.5, 116.0, 20.0 ],
+					"patching_rect" : [ 795.333346009254456, 336.5, 116.0, 20.0 ],
 					"text" : "cv.jit.blobs.centroids"
 				}
 
@@ -710,6 +811,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"order" : 0,
+					"source" : [ "obj-40", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"order" : 1,
+					"source" : [ "obj-40", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"order" : 1,
 					"source" : [ "obj-5", 0 ]
@@ -748,6 +865,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-32", 0 ],
+					"order" : 0,
+					"source" : [ "obj-83", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-33", 0 ],
+					"order" : 0,
+					"source" : [ "obj-83", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-85", 0 ],
 					"source" : [ "obj-83", 0 ]
 				}
@@ -763,6 +896,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-87", 0 ],
+					"order" : 1,
 					"source" : [ "obj-83", 2 ]
 				}
 
@@ -770,6 +904,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-88", 0 ],
+					"order" : 1,
 					"source" : [ "obj-83", 3 ]
 				}
 
@@ -805,21 +940,28 @@
 , 			{
 				"name" : "10.mov",
 				"bootpath" : "~/Documents/LSU/2019_Fall/Max/advanced_max/Assignments/Video_Tracker/videos",
-				"patcherrelativepath" : "../Assignments/Video_Tracker/videos",
+				"patcherrelativepath" : "../videos",
 				"type" : "MooV",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "cv.jit.blobs.centroids.draw.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/cv.jit/patchers",
-				"patcherrelativepath" : "../../../../../Max 8/Packages/cv.jit/patchers",
+				"patcherrelativepath" : "../../../../../../../Max 8/Packages/cv.jit/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "14.mov",
 				"bootpath" : "~/Documents/LSU/2019_Fall/Max/advanced_max/Assignments/Video_Tracker/videos",
-				"patcherrelativepath" : "../Assignments/Video_Tracker/videos",
+				"patcherrelativepath" : "../videos",
+				"type" : "MooV",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "1.mov",
+				"bootpath" : "~/Documents/LSU/2019_Fall/Max/advanced_max/Assignments/Video_Tracker/videos",
+				"patcherrelativepath" : "../videos",
 				"type" : "MooV",
 				"implicit" : 1
 			}
@@ -833,6 +975,10 @@
 			}
 , 			{
 				"name" : "cv.jit.blobs.sort.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "cv.jit.blobs.bounds.mxo",
 				"type" : "iLaX"
 			}
  ],
