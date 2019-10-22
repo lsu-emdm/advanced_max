@@ -39,6 +39,7 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"cols" : 36,
 					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
