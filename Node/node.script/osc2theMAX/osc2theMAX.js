@@ -1,5 +1,8 @@
 // OSC MAX Node Yup
 // Jesse Allison
+//
+// https://github.com/colinbdclark/osc.js
+// simpler osc implementation: https://github.com/MylesBorins/node-osc
 
 const path = require('path');
 const Max = require('max-api');
