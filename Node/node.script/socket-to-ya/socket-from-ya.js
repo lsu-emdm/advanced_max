@@ -5,7 +5,8 @@
 const maxAPI = require("max-api");
 var io = require('socket.io-client');
 
-var socket = io.connect("http://localhost:3001/", {
+//var socket = io.connect("http://localhost:3001/", {
+var socket = io.connect("http://167.96.75.175:3001/", {
   reconnection: true
 });
 
@@ -26,6 +27,10 @@ socket.on('connect', function() {
 
   socket.on('play', (...data) => {
     maxAPI.outlet('play', data);
+  })
+
+  maxAPI.addHandler('playSF', (...args) => {
+    socket.emit('playSF', ...args);
   })
 
 });
