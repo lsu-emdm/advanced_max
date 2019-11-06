@@ -11,7 +11,7 @@ io.on('connection', function(socket) {
   setInterval(function() {
     socket.emit('clientEvent', Math.random());
     console.log('message sent to the clients');
-  }, 3001);
+  }, 2000);
 
   // // When node.script gets the symbol "text", the remainder will be passed to this function.
   // // The "..." is the spread operator. All of the arguments to this function will go into args as an array.
