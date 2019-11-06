@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 66.0, 106.0, 720.0, 506.0 ],
+		"rect" : [ 49.0, 223.0, 720.0, 506.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,13 +39,37 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 83.0, 58.5, 63.0, 22.0 ],
+					"text" : "script stop"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 246.0, 150.0, 47.0, 22.0 ],
+					"text" : "play 10"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bubble" : 1,
 					"id" : "obj-23",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 214.0, 105.5, 111.0, 37.0 ],
+					"patching_rect" : [ 209.0, 99.0, 111.0, 37.0 ],
 					"text" : "Write your text here"
 				}
 
@@ -56,8 +80,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 55.0, 298.0, 120.0, 22.0 ],
-					"text" : "print echo @popup 1"
+					"patching_rect" : [ 55.0, 298.0, 121.0, 22.0 ],
+					"text" : "print to-ya @popup 1"
 				}
 
 			}
@@ -71,7 +95,7 @@
 					"outlettype" : [ "", "int", "", "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 94.0, 99.0, 100.0, 50.0 ],
-					"text" : "Blorb"
+					"text" : "LSU"
 				}
 
 			}
@@ -103,7 +127,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 136.0, 40.5, 111.0, 37.0 ],
+					"patching_rect" : [ 136.0, 19.5, 111.0, 37.0 ],
 					"text" : "Remember to start the script"
 				}
 
@@ -115,7 +139,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 55.0, 48.0, 64.0, 22.0 ],
+					"patching_rect" : [ 55.0, 27.0, 64.0, 22.0 ],
 					"text" : "script start"
 				}
 
@@ -131,8 +155,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -165,7 +187,21 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-8", 0 ]
 				}
 
 			}
