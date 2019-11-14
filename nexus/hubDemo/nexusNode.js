@@ -57,6 +57,7 @@ hub.io.sockets.on('connection', function(socket) {
     // TODO: iterate through data and add these properties dynamically.
     // Can add any other pertinent details to the socket to be retrieved later
 
+    // socket.username = data.name || "a_user";
     socket.username = typeof data.name !== 'undefined' ? data.name : "a_user";
     socket.userColor = typeof data.color !== 'undefined' ? data.color : "#CCCCCC";
     socket.userNote = typeof data.note !== 'undefined' ? data.note : " ";
@@ -137,15 +138,16 @@ hub.io.sockets.on('connection', function(socket) {
   //     //  socket.broadcast.emit('tap', data);  // just for others until a fix is made.
   // });
 
-  hub.channel('tap', null, ['display'], function(data) {
+  // Only transmitted to the client registered as username = 'display'
+  hub.channel('tap', null, ['display'], (data) => {
     hub.log("Recieved Tap");
     hub.transmit('tap', null, data);
-    if (inMax) { Max.outlet('tap', data.val) }
+    if (inMax) { Max.outlet('tap', data.value) }
   });
 
   if (inMax) {
     Max.addHandler("tap", (dataIn) => {
-      let data = { val: dataIn };
+      let data = { value: dataIn };
       hub.transmit('tap', null, data);
     });
   }
@@ -163,16 +165,23 @@ hub.io.sockets.on('connection', function(socket) {
     });
   }
 
+  // Demonstrating iterating through all of the keys in the json and creating an osc message for max
   hub.channel('sendText', null, ["others", "display"], function(data) {
     hub.log(`sendText ${data}`);
     hub.transmit('sendText', null, data);
-    if (inMax) { Max.outlet('sendText', data.text) }
+    if (inMax) {
+      let oscData = [];
+      Object.keys(data).forEach(e => {
+        Max.outlet(`sendText/${e}`, data[e]);
+      });
+    }
   });
-
-  Max.addHandler("sendText", (...dataIn) => {
-    let data = { text: dataIn };
-    hub.transmit('sendText', null, data);
-  });
+  if (inMax) {
+    Max.addHandler("sendText", (...dataIn) => {
+      let data = { text: dataIn };
+      hub.transmit('sendText', null, data);
+    });
+  }
 
   hub.channel('end', null, ["others"], function(data) {
     hub.log(`end ${data}`);
@@ -180,10 +189,12 @@ hub.io.sockets.on('connection', function(socket) {
     if (inMax) { Max.outlet('end', data) }
   });
 
-  Max.addHandler("end", (dataIn) => {
-    let data = { val: dataIn };
-    hub.transmit('end', null, data);
-  });
+  if (inMax) {
+    Max.addHandler("end", (dataIn) => {
+      let data = { val: dataIn };
+      hub.transmit('end', null, data);
+    });
+  }
 
   // Don't use auto callback creation yet, it's not secure.
   // hub.channel('tap', null, ["others", "display", "audio"]);
