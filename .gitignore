@@ -1,3 +1,5 @@
 tate/node.script-start
 *.aiff
 *.wav
+
+.DS_Store
