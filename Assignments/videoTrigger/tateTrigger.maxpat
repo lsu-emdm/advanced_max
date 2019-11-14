@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 79.0, 1671.0, 967.0 ],
+		"rect" : [ 34.0, 79.0, 1212.0, 687.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,12 +39,24 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-49",
+					"maxclass" : "incdec",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1446.0, 736.0, 20.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-104",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 753.0, 989.0, 150.0, 30.0 ],
+					"patching_rect" : [ 846.0, 985.0, 131.0, 30.0 ],
 					"text" : "how do i control the lengths of the sample?"
 				}
 
@@ -231,12 +243,12 @@
 					"patching_rect" : [ 1127.966667532920837, 788.0, 50.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_longname" : "number",
-							"parameter_initial_enable" : 1,
-							"parameter_invisible" : 1,
 							"parameter_initial" : [ 1000 ],
 							"parameter_shortname" : "number",
-							"parameter_type" : 3
+							"parameter_type" : 3,
+							"parameter_longname" : "number",
+							"parameter_initial_enable" : 1,
+							"parameter_invisible" : 1
 						}
 
 					}
@@ -474,7 +486,6 @@
 				"box" : 				{
 					"id" : "obj-154",
 					"ignoreclick" : 1,
-					"int" : 1,
 					"maxclass" : "gswitch2",
 					"numinlets" : 2,
 					"numoutlets" : 2,
@@ -752,7 +763,7 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.595186999999999,
 					"id" : "obj-37",
-					"items" : [ "Griffin PowerMate", ",", "Apple Keyboard", ",", "Apple Keyboard 2", ",", "Microsoft 3-Button Mouse with IntelliEye(TM)", ",", "Apple Internal Keyboard / Trackpad", ",", "Apple Internal Keyboard / Trackpad 2", ",", "Apple Internal Keyboard / Trackpad 3", ",", "Apple Internal Keyboard / Trackpad 4", ",", "Apple Internal Keyboard / Trackpad 5" ],
+					"items" : [ "Apple Internal Keyboard / Trackpad", ",", "Apple Internal Keyboard / Trackpad 2", ",", "Apple Internal Keyboard / Trackpad 3", ",", "Apple Internal Keyboard / Trackpad 4", ",", "Apple Internal Keyboard / Trackpad 5" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -1088,7 +1099,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 525.25, 168.200002431869507, 18.0, 50.0 ],
 					"size" : 3,
-					"value" : 0
+					"value" : 2
 				}
 
 			}
@@ -1267,7 +1278,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1162.000008583068848, 461.33333283662796, 73.0, 20.0 ],
-					"text" : "17936."
+					"text" : "25255."
 				}
 
 			}
@@ -1400,7 +1411,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 931.466667532920837, 461.33333283662796, 73.0, 20.0 ],
-					"text" : "17936."
+					"text" : "31949."
 				}
 
 			}
@@ -1557,7 +1568,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 658.666667282581329, 461.33333283662796, 73.0, 20.0 ],
-					"text" : "35240."
+					"text" : "35789."
 				}
 
 			}
@@ -1626,7 +1637,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 178.233333726724197, 760.199999094009399, 88.999999999999943, 20.0 ],
-					"text" : "126. 200."
+					"text" : "2. 334."
 				}
 
 			}
@@ -1723,7 +1734,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 333.166666666666799, 757.199999451637268, 88.999999999999943, 20.0 ],
-					"text" : "452. 388."
+					"text" : "626. 468."
 				}
 
 			}
@@ -1783,7 +1794,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 125.199998736381531, 558.666683733463287, 206.0, 20.0 ],
-					"text" : "mouseidleout 332 188 0 0 0 0 0 0"
+					"text" : "mouseidleout 323 221 0 0 0 0 0 0"
 				}
 
 			}
@@ -3184,8 +3195,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
