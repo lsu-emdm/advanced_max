@@ -17,19 +17,19 @@ let publicFolder = __dirname + '/public';
 let NexusHub = require('./js/hub');
 let hub = new NexusHub();
 
-let inMax = true;
-let Max;
+// let inMax = true;
+// let Max;
 
-try {
-  // a path we KNOW is totally bogus and not a module
-  Max = require('max-api');
-} catch (e) {
-  console.log('Server started not inside Max node.script')
-  console.log(e)
-  inMax = false;
-}
+// try {
+//   // a path we KNOW is totally bogus and not a module
+//   Max = require('max-api');
+// } catch (e) {
+//   console.log('Server started not inside Max node.script')
+//   console.log(e)
+//   inMax = false;
+// }
 
-console.log("Max: ", inMax);
+// console.log("Max: ", inMax);
 
 // update any server settings before initialization
 if (process.env.PORT) {
@@ -85,7 +85,7 @@ hub.io.sockets.on('connection', function(socket) {
     if (socket.username == "maxController") {
       hub.audio.id = socket.id;
       hub.discreteClients.audio.id = socket.id;
-      console.log("Hello MaxMSP Controller: " + hub.max.id);
+      console.log("Hello MaxMSP Controller: " + hub.audio.id);
     }
 
     if (socket.username == "a_user") {
