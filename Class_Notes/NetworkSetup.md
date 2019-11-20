@@ -27,7 +27,34 @@ Cell service with Data plans connected to the WAN
 
 As you work your way out from the locally hosted machine, the networking issues become tiered, adding complexity because each simple, individual setup must be traversed appropriately and not conflicting with a network setting down the line.  For instance, if your ISP blocks all network ports except 8000-8010 and your node app runs on port 7575, you will not be able to connect to it outside of the local network – this is the case with LSU where only certain ports are passed through. (grok DMZ open ports)
 
-A local 
+### Local Network
+
+This setup is the simplest. 
+
+Typical Settings:
+WiFi Name: something short like emdm
+Password: none, or wpa/wpa2 personal with a short pw like experimental
+DHCP + NAT
+IP Address Range: 10.0.1.2-10.0.1.200
+Reserved Addresses: 10.0.1.201-10.0.1.255
+Port Forwarding: none needed
+Internet WAN: none (leave on DHCP and have it self-assign an IP)
+Radio: set on the broadest supported band. 
+
+Options:
+Radio: split the 2.4Ghz (audience) and 5Ghz (performers) bands to support 
+
+Pros
+- easy to setup
+- relatively secure
+- Scalability (can reach 50-200 people relatively simply)
+Cons
+- No connection from the outside
+- must connect to this network
+- must host a DNS 
+- -or- have everyone connect through IP & port 10.0.1.201:3000
+- -or- host on port 80 leaving just the IP Address: 10.0.1.201 
+- Scalability (must handle on your own w/ multiple access points)
 
 # Apple Airport Router
 
