@@ -1,5 +1,72 @@
 # Network Setup
 
+We're going to discuss the network in terms of connecting things via node and websockets.  Be aware that this uses TCP and Port 80 to communicate in the standard fashion. As this is standard web traffic, this is almost always open and bypasses a lot of the intracacies of firewalls, port forwarding, and the like.  If you decide to use another protocol: OSC via UDP, self defined ports, ssh, etc. there will be some more fiddly settings to deal with. I'll try to note them when they come up. 
+
+There are possibly hundreds of types of entities you may want to network. We'll discuss those below.
+
+__Local Hardwired__ 
+Router on site
+
+1) A local computer acting as a server [max, node, processing, etc.]
+2) a local wired device acting as a client like a raspberry-pi [installation, display rendering computer, etc.]
+
+__Local Wireless__ 
+wireless router on site
+
+3) a local wireless device like an iPad [audience members]
+4) a local wireless device like a phone that has cell service [audience members ]
+
+__Wide Area Network__
+ISPs providing [DSL, cable, dish]
+Cell service with Data plans connected to the WAN
+
+5) computers on the wired internet [offsite viewers or interactions]
+6) Cell phones on the Cell Network [offsite audience or members who don't have access to the local network]
+7) IOT [installation or iot devices that are on networks outside the control of you]
+8) Server in the cloud [perhaps a node app or other service hosted in the cloud that you need access to]
+
+As you work your way out from the locally hosted machine, the networking issues become tiered, adding complexity because each simple, individual setup must be traversed appropriately and not conflicting with a network setting down the line.  For instance, if your ISP blocks all network ports except 8000-8010 and your node app runs on port 7575, you will not be able to connect to it outside of the local network – this is the case with LSU where only certain ports are passed through. (grok DMZ open ports)
+
+### Local Network
+
+This setup is the simplest. 
+
+Typical Settings:
+WiFi Name: something short like emdm
+Password: none, or wpa/wpa2 personal with a short pw like experimental
+DHCP + NAT
+IP Address Range: 10.0.1.2-10.0.1.200
+Reserved Addresses: 10.0.1.201-10.0.1.255
+Port Forwarding: none needed
+Internet WAN: none (leave on DHCP and have it self-assign an IP)
+Radio: set on the broadest supported band. 
+
+Options:
+Radio: split the 2.4Ghz (audience) and 5Ghz (performers) bands to support 
+
+Pros
+- easy to setup
+- relatively secure
+- Scalability (can reach 50-200 people relatively simply)
+Cons
+- No connection from the outside
+- must connect to this network
+- must host a DNS 
+- -or- have everyone connect through IP & port 10.0.1.201:3000
+- -or- host on port 80 leaving just the IP Address: 10.0.1.201 
+- Scalability (must handle on your own w/ multiple access points)
+
+# Apple Airport Router
+
+As opposed to most routers which provide administrative access through the router address (192.168.0.1 or 10.0.1.1 or ...) apple airports are administered through the Airport Utility found in Applications/Utilities on modern MacOSX. 
+
+![airport](media/airport.png)
+
+We are using the following setup in class
+```
+router name: test1 or test2
+password: testtest
+```
 
 ## Base Station
 
@@ -72,6 +139,11 @@ If you have a USB port, networked drive, or an onboard hard drive, you can set u
 
 
 ## Terminology
+
+- router
+- nic
+- network switch
+- 
 
 - WAN 
 - LAN 

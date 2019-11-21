@@ -17,7 +17,7 @@ let publicFolder = __dirname + '/public';
 let NexusHub = require('./js/hub');
 let hub = new NexusHub();
 
-// let inMax = true;
+// let hub.withinMax = true;
 // let Max;
 
 // try {
@@ -26,10 +26,10 @@ let hub = new NexusHub();
 // } catch (e) {
 //   console.log('Server started not inside Max node.script')
 //   console.log(e)
-//   inMax = false;
+//   hub.withinMax = false;
 // }
 
-// console.log("Max: ", inMax);
+// console.log("Max: ", hub.withinMax);
 
 // update any server settings before initialization
 if (process.env.PORT) {
@@ -120,11 +120,11 @@ hub.io.sockets.on('connection', function(socket) {
     console.log('Adding in a new socket.on test with data:', data);
     hub.log(`test ${data}`);
     hub.transmit('test', null, data);
-    if (inMax) { Max.outlet('test', data) }
+    if (hub.withinMax) { Max.outlet('test', data) }
   });
 
   // Must decide how to decode data from max into key value json.
-  if (inMax) {
+  if (hub.withinMax) {
     Max.addHandler("test", (...dataIn) => {
       let data = { val: dataIn };
       hub.transmit('test', null, data);
@@ -142,10 +142,10 @@ hub.io.sockets.on('connection', function(socket) {
   hub.channel('tap', null, ['display'], (data) => {
     hub.log("Recieved Tap");
     hub.transmit('tap', null, data);
-    if (inMax) { Max.outlet('tap', data.value) }
+    if (hub.withinMax) { Max.outlet('tap', data.value) }
   });
 
-  if (inMax) {
+  if (hub.withinMax) {
     Max.addHandler("tap", (dataIn) => {
       let data = { value: dataIn };
       hub.transmit('tap', null, data);
@@ -155,10 +155,10 @@ hub.io.sockets.on('connection', function(socket) {
   hub.channel('sharedSlider', null, null, function(data) {
     // hub.transmit('sharedSlider', null, data);
     socket.broadcast.emit('sharedSlider', data); // just for others until a fix is made.
-    if (inMax) { Max.outlet('sharedSlider', data.value) }
+    if (hub.withinMax) { Max.outlet('sharedSlider', data.value) }
   });
 
-  if (inMax) {
+  if (hub.withinMax) {
     Max.addHandler("sharedSlider", (dataIn) => {
       let data = { value: dataIn };
       hub.transmit('sharedSlider', null, data);
@@ -169,14 +169,14 @@ hub.io.sockets.on('connection', function(socket) {
   hub.channel('sendText', null, ["others", "display"], function(data) {
     hub.log(`sendText ${data}`);
     hub.transmit('sendText', null, data);
-    if (inMax) {
+    if (hub.withinMax) {
       let oscData = [];
       Object.keys(data).forEach(e => {
         Max.outlet(`sendText/${e}`, data[e]);
       });
     }
   });
-  if (inMax) {
+  if (hub.withinMax) {
     Max.addHandler("sendText", (...dataIn) => {
       let data = { text: dataIn };
       hub.transmit('sendText', null, data);
@@ -186,10 +186,10 @@ hub.io.sockets.on('connection', function(socket) {
   hub.channel('end', null, ["others"], function(data) {
     hub.log(`end ${data}`);
     hub.transmit('end', null, data);
-    if (inMax) { Max.outlet('end', data) }
+    if (hub.withinMax) { Max.outlet('end', data) }
   });
 
-  if (inMax) {
+  if (hub.withinMax) {
     Max.addHandler("end", (dataIn) => {
       let data = { val: dataIn };
       hub.transmit('end', null, data);
