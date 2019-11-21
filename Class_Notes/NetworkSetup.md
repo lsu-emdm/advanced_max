@@ -140,6 +140,11 @@ If you have a USB port, networked drive, or an onboard hard drive, you can set u
 
 ## Terminology
 
+- router
+- nic
+- network switch
+- 
+
 - WAN 
 - LAN 
 - Wireless Network 
